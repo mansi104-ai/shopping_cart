@@ -1,11 +1,11 @@
 let shop = document.getElementById('shop')
 
-let shopItemsData [
+let shopItemsData= [
      {
 
     id: "jdkgfjnjfg",
     name: "Casual Shirt",
-    price: 45,
+    price: "$45" ,
     desc:"lorem ipsum ",
     img: "img1.jpg"
 
@@ -13,21 +13,21 @@ let shopItemsData [
     {
     id: "fjdnvjjdj",
     name: "Frock",
-    price: 80,
+    price:  "$80",
     desc:"Dark Blue ",
     img: "img2.jpg"
     },
     {
     id: "nnvnfvnfjv",
     name: "Blazer",
-    price: 100,
+    price:  "$100",
     desc:"Black",
     img: "img3.jpg"
     },
     {
     id: "ieieie",
     name: "Hat",
-    price: 20,
+    price:  "$20",
     desc:"burnt sienna",
     img: "img4.jpg"
     }
@@ -46,17 +46,25 @@ let generateShop =()=>{
             <div class="price-quantity">
                 <h2>${price}</h2>
                 <div class="buttons">
-                    <i class="bi bi-plus-lg"></i>
+                    <i onclick="increment" class="bi bi-plus-lg"></i>
                     <div class="quantity">0</div>
-                    <i class="bi bi-dash-lg"></i>
+                    <i onclick="decrement" class="bi bi-dash-lg"></i>
                 </div>
             </div>
         </div>
     </div>
 `
-    }).join(""))) 
+    }).join(""))
     
     
 };
 
 generateShop();
+
+let increment = ()=>{
+    console.log("increment")
+};
+let decrement = ()=>{
+    console.log("decrement")
+};
+let update = () =>{};
