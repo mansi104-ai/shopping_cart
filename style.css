@@ -3,106 +3,66 @@
 **/
 
 
-
-{
+body {
     margin: 0;
-    padding: 0 ;
-    box-sizing: border-box;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-body{
-    font-family: sans-serif;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-
-/**
-*! navbars styles are here
-**/
-.navbar{
+.header {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    background-color: #374c62;
-    color: white;
-    padding: 25px 60px;
-    margin-bottom: 30px;
 }
 
-.cart{
-    position : relative;
-    background-color:#374c62;
-    color :white;
-    font-size: 30px;
-    padding: 5px;
-    border-radius: 5px
+.header h1 {
+    margin: 0;
+    font-size: 36px;
 }
 
-.cartAmount{
-    position: absolute;
-    top:0;
-    font-size: 16px;
-    background-color:red;
-    color: white;
-    padding: 3px;
-}
-
-/**
-*! shop items styles are here
-**/
-
-.shop{
-    display:grid;
-    grid-template-columns: repeat(4, 223px);
-    gap: 30px;
-    justify-content: center;
-}
-
-
-@media(max-width : 1000px){
-    .shop{
-        grid-template-columns: repeat(2, 223px);
-    }
-
-}
-
-@media(max-width : 500px){
-    .shop{
-        grid-template-columns: repeat(1, 223px);
-    }
-
-}
-
-.item{
-    border: 2px solid #374c62;
-    border-radius: 4px;
-}
-
-.details{
-   display: flex; 
-   flex-direction : column;
-   padding: 10px;
-   gap :10px;
-}
-
-.price-quantity{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items:center;
-}
-
-.buttons{
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
+.header input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
     font-size: 16px;
 }
 
-.bi-plus-lg{
-    color: green;
-
+.header a {
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.bi-dash-lg{
-    color: red;
+.categories {
+    margin: 20px 0;
+}
+
+.categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.categories li {
+    margin-right: 20px;
+}
+
+.categories li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
 }
