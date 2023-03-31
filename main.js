@@ -1,5 +1,36 @@
 let shop=document.getElementById('shop');
 
+let shopItemsData=[{
+    id:"ifvvvnofvn",
+    name:"Casual Shirt",
+    price: 45,
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing."
+    img: "img1.jpg"
+},
+{
+    id:"peoeoeoeo",
+    name:"Casual Shirt",
+    price: 45,
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing."
+    img: "img1.jpg"
+
+},
+{
+    id:"rurririuir",
+    name:"Casual Shirt",
+    price: 45,
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing."
+    img: "img1.jpg"
+
+},
+{
+    id:"pproeir",
+    name:"Casual Shirt",
+    price: 45,
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing."
+    img: "img1.jpg"
+}]
+
 let generateShop=()=>{
     return shop.innerHTML= `
     <div class="item">
