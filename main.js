@@ -4,53 +4,96 @@ let shopItemsData=[{
     id:"ifvvvnofvn",
     name:"Casual Shirt",
     price: 45,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing."
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
     img: "img1.jpg"
 },
 {
     id:"peoeoeoeo",
-    name:"Casual Shirt",
-    price: 45,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing."
-    img: "img1.jpg"
+    name:"Pretty Frock",
+    price: 100,
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+    img: "img2.jpg"
 
 },
 {
     id:"rurririuir",
-    name:"Casual Shirt",
-    price: 45,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing."
-    img: "img1.jpg"
+    name:"Blazer",
+    price: 200,
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+    img: "img3.jpg"
 
 },
 {
     id:"pproeir",
-    name:"Casual Shirt",
-    price: 45,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing."
-    img: "img1.jpg"
-}]
+    name:"Hat",
+    price: 20,
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+    img: "img4.jpg"
+}];
+
+let basket=[];
 
 let generateShop=()=>{
-    return shop.innerHTML= `
-    <div class="item">
-            <img width ="220"src="img1.jpg" alt="">
+    return (shop.innerHTML= shopItemsData.map((x)=>{
+        let {id,name,price,desc,img} =x;
+        return `
+    <div id=product-id-${id} class="item">
+            <img width ="220"src=${img} alt="">
             <div class="details">
-                <h3>Casual Shirt</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <h3>${name}</h3>
+                <p>${desc}</p>
                 <div class="price-quantity">
-                    <h2>$45</h2>
+                    <h2>$ ${price}</h2>
                     <div class="buttons">
-                        <i class="bi bi-dash-circle-fill"></i>
-                        <div class="quantity">0</div>
-                        <i class="bi bi-plus-circle-fill"></i>
+                        <i onclick="decrement(${id})" class="bi bi-dash-circle-fill"></i>
+                        <div id=${id} class="quantity">0</div>
+                        <i onclick="increment(${id})" class="bi bi-plus-circle-fill"></i>
 
                     </div>
                 </div>
 
             </div>
         </div>
-    `
-}
+        
+        `;
+
+    }).join(""));
+    
+    
+};
 
 generateShop();
+
+let increment = (id)=>{
+    let selectedItem = id;
+    let search  =basket.find((x)=>x.id === selectedItem.id );
+
+    if(search === undefined){
+        basket.push({
+            id: selectedItem.id,
+            item : 1,
+    });
+    }else{
+        search.item +=1;
+    }
+
+
+    console.log(basket);
+};
+let decrement = (id)=>{
+    let selectedItem = id;
+    let search  =basket.find((x)=>x.id === selectedItem.id );
+
+    if(search === undefined){
+        basket.push({
+            id: selectedItem.id,
+            item : 1,
+    });
+    }else{
+        search.item -=1;
+    }
+
+
+    console.log(basket);
+};
+let update = ()=>{};
