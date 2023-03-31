@@ -1,12 +1,7 @@
-/**
-*! hanging default styles of the browser
-**/
-
 *{
-    margin: 0;
-    padding:0;
+    margin:0;
+    padding: 0;
     box-sizing: border-box;
-
 }
 
 body{
@@ -14,60 +9,75 @@ body{
 
 }
 
+/**
+*?navbar styles are here
+
+**/
 .navbar{
-    display: flex;
+    display:flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: #212529;
-    color : white;
-    padding : 25px 60px;
+    color:white;
+    padding: 25px 60px;
     margin-bottom: 30px;
-
-
 }
 
 .cart{
     position: relative;
-    background-color: #fff;
-    color:#212529;
-    padding: 5px;
+    background-color:#212529;
+    color: white;
     font-size: 30px;
-    border-radius: 4px;
+    padding: 5px;
+    border-radius: 5px;
+
 }
 
 .cartAmount{
-
-    position: absolute;
+    position:absolute;
     top:-15px;
-    right:-10px;
-    font-size:16px;
+    right:0;
+    font-size: 16px;
     background-color: red;
     color:white;
     padding: 3px;
     border-radius: 3px;
+
 }
 
 /**
-*! shop items styles are here
+*! Shop items styles are here
 **/
 
 .shop{
     display: grid;
-    grid-template-columns: repeat(4, 223px);
-    gap: 30px;
+    grid-template-columns: repeat(4,223px);
+    gap:30px;
     justify-content: center;
+}
 
+@media(max-width: 1000px){
+    .shop{
+        grid-template-columns: repeat(2,223px);
+    }
+}
+
+@media(max-width: 500px){
+    .shop{
+        grid-template-columns: repeat(1,223px);
+    }
 }
 
 .item{
-    border: 2px solid #212529;
+    border:2px solid #212529;
     border-radius: 4px;
 }
 .details{
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    gap: 10px;
+    padding:10px;
+    gap:10px;
+
 }
 
 .price-quantity{
@@ -78,17 +88,17 @@ body{
 }
 
 .buttons{
+
     display:flex;
     flex-direction: row;
     gap:8px;
     font-size: 16px;
 }
 
-.bi-dash-lg{
+.bi-dash-circle-fill{
     color:red;
-
 }
 
-.bi-plus-lg{
+.bi-plus-circle-fill{
     color:green;
 }
